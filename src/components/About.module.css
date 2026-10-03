@@ -1,0 +1,148 @@
+.about {
+  background: var(--cream);
+  padding: 7rem 0 6rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left: text */
+.title {
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-weight: 900;
+}
+
+.bio {
+  margin-top: 1.75rem;
+  max-width: 52ch;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #3a3e33;
+}
+
+.githubBtn {
+  margin-top: 2rem;
+}
+
+/* Right: visual */
+.visual {
+  position: relative;
+  padding: 0 1rem 4.5rem 3rem;
+}
+
+.panel {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  width: 78%;
+  height: 88%;
+  background: var(--green);
+  border-radius: 16px;
+}
+
+/* Terminal card */
+.terminalCard {
+  position: relative;
+  z-index: 1;
+  background: var(--green-deep);
+  border-radius: 14px;
+  border: 1px solid var(--line-dark);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.5);
+}
+
+.terminalBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.terminalTab {
+  margin-left: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--cream-soft);
+  opacity: 0.7;
+}
+
+.terminalBody {
+  margin: 0;
+  padding: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: var(--cream-soft);
+  white-space: pre-wrap;
+}
+
+.prompt { color: var(--gold); }
+.result { color: var(--mint); }
+.muted  { color: var(--cream-soft); opacity: 0.75; }
+
+/* Tag pills */
+.tagPill {
+  position: absolute;
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  z-index: 2;
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+.tagTop    { top: -1rem; left: 1.5rem; }
+.tagBottom { bottom: 5.5rem; right: -0.5rem; }
+
+/* Contact card */
+.contactCard {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  width: min(78%, 320px);
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 14px;
+  padding: 1.5rem 1.6rem;
+}
+
+.contactCard h3 {
+  color: var(--cream);
+  font-size: 1.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.contactCard p {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--cream-soft);
+  padding: 0.35rem 0;
+}
+
+.contactCard svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .visual {
+    padding: 0 0.5rem 4.5rem 2rem;
+    max-width: 420px;
+  }
+}

@@ -1,0 +1,141 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--green-deep);
+  border-bottom: 1px solid var(--line-dark);
+  height: var(--nav-h);
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  height: var(--nav-h);
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.logo svg {
+  color: var(--gold);
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkItem {
+  position: relative;
+}
+
+.link {
+  color: var(--cream-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  display: block;
+  position: relative;
+  transition: color 0.15s ease;
+}
+
+.link:hover,
+.link.active {
+  color: var(--cream);
+}
+
+.underline {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gold);
+  border-radius: 1px;
+}
+
+.cta {
+  flex-shrink: 0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+/* Hamburger */
+.toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.bar {
+  display: block;
+  height: 2px;
+  background: var(--cream);
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+/* Mobile drawer */
+.mobile {
+  background: var(--green-deep);
+  border-bottom: 1px solid var(--line-dark);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem clamp(1.25rem, 4vw, 3rem) 1.25rem;
+  position: absolute;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.mobileLink {
+  color: var(--cream-soft);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line-dark);
+  font-weight: 500;
+  display: block;
+}
+
+.mobileLink:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 860px) {
+  .links,
+  .cta {
+    display: none;
+  }
+
+  .toggle {
+    display: flex;
+  }
+}
