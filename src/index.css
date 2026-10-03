@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ============================================================
    GLOBAL STYLES — Design tokens, resets, utilities
    ============================================================ */
@@ -32,12 +36,26 @@ html {
   }
 }
 
+/* ── Marquee / scrolling text strip ─────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.animate-marquee         { animation: marquee         var(--marquee-duration, 28s) linear infinite; }
+.animate-marquee-reverse { animation: marquee-reverse var(--marquee-duration, 28s) linear infinite; }
+
+
 body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
   font-family: 'Space Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img,

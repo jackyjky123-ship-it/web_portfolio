@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import styles from "./Footer.module.css";
 
 const VIEWPORT = { once: true, amount: 0.3 };
 
@@ -41,10 +40,13 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className={styles.footer}>
+    <footer
+      id="contact"
+      className="bg-green-deep text-cream py-24 pb-12 text-center"
+    >
       <div className="wrap">
         <motion.h2
-          className={styles.heading}
+          className="font-serif font-bold text-[clamp(2.2rem,6vw,3.6rem)] max-w-[16ch] mx-auto mb-8"
           variants={fadeUp(0)}
           initial="hidden"
           whileInView="visible"
@@ -60,7 +62,7 @@ export default function Footer() {
           viewport={VIEWPORT}
         >
           <motion.a
-            className={`pill-btn pill-btn--gold ${styles.cta}`}
+            className="inline-flex pill-btn pill-btn--gold mb-12"
             href="mailto:lunlytayhok@gmail.com"
             whileHover={{
               y: -2,
@@ -74,23 +76,32 @@ export default function Footer() {
 
         {/* Socials */}
         <motion.ul
-          className={styles.socials}
+          className="flex justify-center gap-10 list-none p-0 mb-12 flex-wrap"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
         >
           {SOCIALS.map(({ prefix, label, href }) => (
-            <motion.li key={prefix} variants={itemVariants}>
-              <span>{prefix}</span>
-              <a href={href}>{label}</a>
+            <motion.li
+              key={prefix}
+              className="font-mono text-[0.95rem] text-cream-soft flex gap-[0.4rem] items-center"
+              variants={itemVariants}
+            >
+              <span className="text-gold font-bold">{prefix}</span>
+              <a
+                className="transition-opacity duration-150 hover:opacity-70"
+                href={href}
+              >
+                {label}
+              </a>
             </motion.li>
           ))}
         </motion.ul>
 
         {/* Footer nav */}
         <motion.nav
-          className={styles.footerNav}
+          className="flex justify-center gap-8 mb-10 flex-wrap"
           aria-label="Footer navigation"
           variants={containerVariants}
           initial="hidden"
@@ -101,7 +112,7 @@ export default function Footer() {
             <motion.a
               key={href}
               href={href}
-              className={styles.navLink}
+              className="text-[0.9rem] text-cream-soft hover:text-cream transition-colors duration-150"
               variants={itemVariants}
             >
               {label}
@@ -110,7 +121,7 @@ export default function Footer() {
         </motion.nav>
 
         <motion.p
-          className={styles.copyright}
+          className="text-[0.8rem] text-cream-soft opacity-60 m-0"
           variants={fadeUp(0.4)}
           initial="hidden"
           whileInView="visible"
